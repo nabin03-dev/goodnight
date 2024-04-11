@@ -24,15 +24,25 @@ $(function () {
 
       // Change greeting text with transition and fade delay
       var greeting = $("#greeting").text();
-      if (greeting === "Click On the Sun") {
+      if (greeting === "Click On the Sun" || greeting === "Good Morning My BunBun ❤️") {
           setTimeout(function () {
               $("#greeting").addClass("fade-out");
               setTimeout(function () {
-                  $("#greeting").text("Good Night my BunBun ❤️").removeClass("fade-out").addClass("fade-in");
+                  $("#greeting").text("Good Night My BunBun ❤️").removeClass("fade-out").addClass("fade-in");
               }, 500); // Delay for fade-out animation duration
           }, 1500); // Delay before changing the text
       } else {
-          $("#greeting").text("Good Morning my BunBun ❤️");
+          setTimeout(function () {
+              $("#greeting").addClass("fade-out");
+              setTimeout(function () {
+                  $("#greeting").text("Good Morning My BunBun ❤️").removeClass("fade-out").addClass("fade-in");
+              }, 500); // Delay for fade-out animation duration
+          }, 1500); // Delay before changing the text
       }
+  });
+  
+  $('.moon').click(function (e) {
+      e.stopPropagation();
+      // Add logic to handle moon click if needed
   });
 });
